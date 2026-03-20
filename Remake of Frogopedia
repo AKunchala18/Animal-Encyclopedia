@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An encyclopedia about animals, including species, habitats, and interesting facts.">
+    <title>Animal Encyclopedia</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #2e8b57;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: #333;
+        }
+
+        nav a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #2e8b57;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Animal Encyclopedia</h1>
+    <p>Explore animals from around the world 🌍</p>
+    <p>Page Visits: <span id="visit-count">0</span></p>
+</header>
+
+<nav>
+    <a href="#intro">Home</a>
+    <a href="#amphibians">Amphibians</a>
+    <a href="#mammals">Mammals</a>
+    <a href="#birds">Birds</a>
+    <a href="#reptiles">Reptiles</a>
+</nav>
+
+<div class="container">
+
+    <section id="intro">
+        <h2>Welcome</h2>
+        <p>This encyclopedia helps you learn about different animals, their habitats, diets, and unique characteristics.</p>
+    </section>
+
+    <!-- Amphibians (your original frogs go here) -->
+    <section id="amphibians">
+        <h2>Amphibians 🐸</h2>
+        <div class="grid">
+
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Red_eyed_tree_frog_edit2.jpg/799px-Red_eyed_tree_frog_edit2.jpg">
+                <h3>Red-Eyed Tree Frog</h3>
+                <p>Known for bright red eyes and vibrant green body. Found in rainforests.</p>
+            </div>
+
+            <div class="card">
+                <img src="http://springfieldmuseums.org/wp-content/uploads/2019/08/Poisonous-Tree-Frog-1.jpg">
+                <h3>Poison Dart Frog</h3>
+                <p>Small but toxic frogs with bright warning colors.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- New category -->
+    <section id="mammals">
+        <h2>Mammals 🐘</h2>
+        <div class="grid">
+
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/African_elephant_warning_raised_trunk.jpg">
+                <h3>Elephant</h3>
+                <p>Largest land animal, known for intelligence and strong social bonds.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="birds">
+        <h2>Birds 🐦</h2>
+        <div class="grid">
+
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Bald_Eagle_Portrait.jpg">
+                <h3>Bald Eagle</h3>
+                <p>A powerful bird of prey and symbol of strength.</p>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Animal Encyclopedia</p>
+</footer>
+
+<script>
+    let visitCount = localStorage.getItem("page_visit");
+
+    if (visitCount === null) {
+        visitCount = 1;
+    } else {
+        visitCount = parseInt(visitCount) + 1;
+    }
+
+    localStorage.setItem("page_visit", visitCount);
+    document.getElementById("visit-count").textContent = visitCount;
+</script>
+
+</body>
+</html>
